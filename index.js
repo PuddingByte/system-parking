@@ -13,6 +13,8 @@ app.use(express.json(), cors());
 import buscarRegistros from "./routes/consultas/consultasRegistro-route.js";
 import deletarRegistro from "./routes/deletes/deletar_registro.js";
 import adicionarRegistro from "./routes/posts/adicionar_registro.js";
+import editarTotalmenteRegistro from "./routes/puts/editar_totalmente_registro.js";
+import editarParcialmenteRegistro from "./routes/patchs/editar_parcialmente_registro.js";
 
 //Endereços
 import buscarEnderecos from "./routes/consultas/consultasEndereco-route.js";
@@ -25,6 +27,8 @@ import editarParcialmenteEndereco from "./routes/patchs/editar_parcialmente_ende
 import buscarVagas from "./routes/consultas/consultasVagas-route.js";
 import deletarVaga from "./routes/deletes/deletar_vaga.js";
 import adicionarVaga from "./routes/posts/adicionar_vaga.js";
+import editarTotalmenteVaga from "./routes/puts/editar_totalmente_vaga.js";
+import editarParcialmenteVaga from "./routes/patchs/editar_parcialmente_vaga.js";
 
 //Veículos
 import buscarVeiculos from "./routes/consultas/consultaVeiculo.js";
@@ -42,6 +46,8 @@ app.get('/', (req, res) =>{
 app.use('/BuscarRegistro', buscarRegistros);
 app.use('/DeletarRegistro', deletarRegistro);
 app.use('/AdicionarRegistro', adicionarRegistro);
+app.use('/EditarTotalmenteRegistro', editarTotalmenteRegistro);
+app.use('/EditarParcialmenteRegistro', editarParcialmenteRegistro);
 
 app.use('/BuscarEndereco', buscarEnderecos);
 app.use('/DeletarEndereco', deletarEndereco);
@@ -52,6 +58,8 @@ app.use('/EditarParcialmenteEndereco', editarParcialmenteEndereco);
 app.use('/BuscarVaga', buscarVagas);
 app.use('/DeletarVaga', deletarVaga);
 app.use('/AdicionarVaga', adicionarVaga);
+app.use('/EditarTotalmenteVaga', editarTotalmenteVaga);
+app.use('/EditarParcialmenteVaga', editarParcialmenteVaga);
 
 app.use('/BuscarVeiculo', buscarVeiculos);
 

@@ -1,11 +1,11 @@
 import {conexao} from '../conexao.js'
 
-async function editarParcialmenteEndereco(codigo, campo, valor){
+async function editarParcialmenteVaga(codigo, campo, valor){
     const realizarConexao = await conexao();
     const data = [valor, codigo]
-    const sql = `UPDATE tbl_endereco set ${campo} = ? WHERE id_endereco = ? ;`
+    const sql = `UPDATE tbl_vaga set ${campo} = ? WHERE id_vaga = ? ;`
     try{
-        const colunasPermitidas = ['rua', 'numero', 'bairro', 'cidade', 'estado', 'cep']; 
+        const colunasPermitidas = ['statusVaga', 'tipo']; 
         if (!colunasPermitidas.includes(campo)) {
             console.error('Coluna inválida');
             return;
@@ -14,8 +14,8 @@ async function editarParcialmenteEndereco(codigo, campo, valor){
             return results;
         }
     } catch(error){
-        console.error("Erro ao editar o endereço:", error);
+        console.error("Erro ao editar a vaga:", error);
     }
 }
 
-export {editarParcialmenteEndereco};
+export {editarParcialmenteVaga};
