@@ -17,9 +17,9 @@ async function buscarClientes(){
 }
 
 async function buscarCliente(codigo){
-    const sql = `SELECT * FROM tbl_cliente WHERE codigo = ?`
+    const sql = `SELECT * FROM tbl_cliente WHERE codigo = ?`;
     
-    const conn = await conexao()
+    const conn = await conexao();
     
     try {
         // Executar a consulta
@@ -32,4 +32,4 @@ async function buscarCliente(codigo){
 }
 
 
-module.exports = {buscarClientes, buscarCliente}
+module.exports = {buscarClientes, buscarCliente};

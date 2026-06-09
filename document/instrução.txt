@@ -1,0 +1,2 @@
+* O proprietário será o último a ter um CRUD coerente e padronizado, já que ele é a base de 
+estudo para o resto da aplicação.
