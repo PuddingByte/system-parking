@@ -1,8 +1,8 @@
 import { conexao } from "../conexao.js";
 
-async function editarIntegralmenteCliente(infos, codigo){
+async function editarIntegralmenteTelefone(infos, id){
 
-    const sql = `UPDATE proprietario_tbl SET cpf = ?, nome = ?, email = ?, genero = ?, placa_veiculo = ? WHERE codigo = ${codigo} ;`
+    const sql = `UPDATE telefone_tbl SET ddd = ?, numero = ?, id_proprietario = ? WHERE id_telefone = ${id} ;`
     const conn = await conexao()
     
     try {
@@ -16,4 +16,4 @@ async function editarIntegralmenteCliente(infos, codigo){
       }
 }
 
-export {editarIntegralmenteCliente}
+export {editarIntegralmenteTelefone}

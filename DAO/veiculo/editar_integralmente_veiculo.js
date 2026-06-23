@@ -1,12 +1,11 @@
 import { conexao } from "../conexao.js";
 
-async function editarIntegralmenteCliente(infos, codigo){
+async function editarIntegralmenteVeiculo(insfos, placa){
 
-    const sql = `UPDATE proprietario_tbl SET cpf = ?, nome = ?, email = ?, genero = ?, placa_veiculo = ? WHERE codigo = ${codigo} ;`
+    const sql = `UPDATE veiculo_tbl SET placa = ?, modelo = ?, ano = ?, cor = ?, marca = ? WHERE placa = ${placa} ;`
     const conn = await conexao()
     
     try {
-        // Executar a consulta
         const [results] = await conn.query(sql,[...infos]);
 
         await conn.end()
@@ -16,4 +15,4 @@ async function editarIntegralmenteCliente(infos, codigo){
       }
 }
 
-export {editarIntegralmenteCliente}
+export {editarIntegralmenteVeiculo}
